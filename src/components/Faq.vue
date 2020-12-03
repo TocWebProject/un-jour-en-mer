@@ -1,4 +1,5 @@
 <template>
+    <TransitionAnimation></TransitionAnimation>
     <NavBlogAndFaq></NavBlogAndFaq>
     <div ref="containerFaq" class="container col-8 faq-section">     
         <div id="accordion">
@@ -6,7 +7,7 @@
                 <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Est-il possible de reporter l'excursion en cas de météo capricieuse ? 
+                            Est-il possible de reporter l'excursion en cas de météo capricieuse ? 
                         </button>
                     </h5>
                 </div>
@@ -21,7 +22,7 @@
                 <div class="card-header" id="headingTwo">
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Quelle tenue dois-je prévoir ? 
+                            Quelle tenue dois-je prévoir ? 
                         </button>
                     </h5>
                 </div>
@@ -36,7 +37,7 @@
                 <div class="card-header" id="headingThree">
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Nous souhaitons partir plusieurs jours, est-ce possible ? 
+                            Nous souhaitons partir plusieurs jours, est-ce possible ? 
                         </button>
                     </h5>
                 </div>
@@ -47,12 +48,11 @@
                 </div>
             </div>
         </div>
-
-    </div>
-        
+    </div>   
 </template>
 
 <script>
+import TransitionAnimation from './TransitionAnimation.vue'
 import NavBlogAndFaq from './NavBlogAndFaq.vue'
 import { TimelineLite, Expo } from 'gsap'
 
@@ -60,6 +60,7 @@ export default {
     name:'Faq',
     components: {
         NavBlogAndFaq,
+        TransitionAnimation,
     },
     methods: {
         animFaq(){
@@ -67,18 +68,11 @@ export default {
             const timelineBlog = new TimelineLite()
             timelineBlog.from(containerFaq, {
                 opacity: 0,
-                y: -50,
+                scale: 1.1,
+                y: -100,
                 ease: Expo.easeInOut,
-            })
-
-        },
-        leaveAnimFaq(){
-            const { containerFaq } = this.$refs
-            const timelineBlog = new TimelineLite()
-            timelineBlog.to(containerFaq, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
+                //Waiting For Transition Animation Complete coming from TransitionAnimation.vue
+                delay: 1.2,
             })
         },
     },
@@ -88,22 +82,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-.faq-section {
-   padding-top: 20vh;
-}
-
-.btn-link {
-    font-weight: 400;
-    color: rgba(0, 21, 50, 0.9);
-    text-decoration: none;
-    outline: none;
-}
-
-.btn-link:hover {
-    color: #023e7e;
-    text-decoration: none;
-}
-
-</style>

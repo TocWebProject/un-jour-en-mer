@@ -1,4 +1,5 @@
 <template>
+    <TransitionAnimation></TransitionAnimation> 
     <NavBlogAndFaq></NavBlogAndFaq>
     <div class="blog-section">
         <div class="container-fluid blog-container">
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import TransitionAnimation from './TransitionAnimation.vue'
 import NavBlogAndFaq from './NavBlogAndFaq.vue'
 import { gsap,TimelineLite, Expo } from 'gsap'
 
@@ -19,6 +21,7 @@ export default {
     name:'Blog',
     components: {
         NavBlogAndFaq,
+        TransitionAnimation,
     },
     methods: {
         animImgBlog(){
@@ -26,16 +29,16 @@ export default {
             const timelineBlog = new TimelineLite()
             timelineBlog.from(imgBlog, {
                 opacity: 0,
-                scale: 1.3,
-                y: -100,
-                
+                scale: 1.1,
+                y: -100, 
                 ease: Expo.easeInOut,
+                //Waiting For Transition Animation Complete coming from TransitionAnimation.vue
+                delay: 1.2,
             })
 
             timelineBlog.from(h1Blog, {
                 opacity: 0,
-                y: 50,
-                
+                y: 50,  
                 ease: Expo.easeInOut,
             }, '-=0.2')
         },
@@ -43,7 +46,7 @@ export default {
         animHoverImgBlog() {
             const { imgBlog, h1Blog } = this.$refs
             gsap.to(imgBlog, {
-                scale: 1.05,
+                scale: 1.01,
                 ease: Expo.easeInOut,
             })
 
@@ -75,36 +78,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-.blog-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; 
-    position: relative;
-}
-
-h1 {
-    position: absolute;
-    z-index: 10;
-    top: 58%;
-    transform:translateY(-40%);
-    left: 50%;
-    transform: translateX(-50%);
-    font-weight: 500;
-    color:#001532;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 47px;
-    font-family: "Playfair Display";
-    mix-blend-mode:multiply;
-}
-
-.img {
- z-index: -3;
-}
-
-</style>

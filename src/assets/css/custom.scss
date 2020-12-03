@@ -12,7 +12,7 @@
 /* ---------------  Navbar ---------------  */
 .navigation {
     position: absolute;
-    z-index: 100;
+    z-index: 8;
 }
 
 .navbar{
@@ -48,7 +48,7 @@
 
 
 
-/* ---------------  First-Section ---------------  */
+/* ---------------  HomePage First-Section ---------------  */
 .first-section {
     padding-top: 140px;
     min-height: 100vh;
@@ -107,8 +107,7 @@
     cursor: pointer;
 }
 
-
-/* ---------------  Second-Section A Propos ---------------  */
+/* ---------------  HomePage Second-Section A Propos ---------------  */
 .second-section {
     margin-top: 80px;
     min-height: 100vh;
@@ -172,7 +171,7 @@
     overflow: hidden;
 }
 
-/* ---------------  Vos-Envies-Section (Only Desktop) ---------------  */
+/* ---------------  HomePage Vos-Envies-Section (Only Desktop) ---------------  */
 .vos-envies-section {
     padding-bottom: 80px;
     margin-top: 300px;
@@ -262,10 +261,10 @@
 
 .project-preview-3 {
     background: url('../img/geran-de-klerk-unsplash.jpg') no-repeat 50% 50%;
-    }
+}
 
 
-/* ---------------  Réservation-Section ---------------  */
+/* ---------------  HomePage Réservation-Section ---------------  */
 .reservation-section {
     padding-bottom: 80px;
     margin-top: 80px;
@@ -336,7 +335,7 @@
     color: rgba(0, 21, 50, 0.9);
 }
 
-/* ---------------  Contact Section ---------------  */
+/* ---------------  HomePage Contact Section ---------------  */
 .section-contact {
     height: auto;
     min-height: 80vh;
@@ -369,6 +368,7 @@
 .img-contact-melen {
     display: block;
     width: 260px;
+    height: 260px;
     object-fit: cover;
 }
 
@@ -393,7 +393,7 @@
     text-decoration: none;
 }
 
-/* Wave Animation Bottom*/
+/* ---------------  HomePage Wave Animation Bottom ---------------  */
 .waves {
     position:relative;
     width: 100%;
@@ -406,30 +406,123 @@
 .parallax > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
   }
-  .parallax > use:nth-child(1) {
+.parallax > use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
+}
+.parallax > use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
+}
+.parallax > use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
+}
+.parallax > use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 20s;
-  }
-  @keyframes move-forever {
+}
+@keyframes move-forever {
     0% {
-     transform: translate3d(-90px,0,0);
+        transform: translate3d(-90px,0,0);
     }
     100% { 
-      transform: translate3d(85px,0,0);
+        transform: translate3d(85px,0,0);
     }
-  }
+}
+  
+
+/* ---------------  Faq Page ---------------  */
+
+.faq-section {
+    padding-top: 25vh;
+ }
+ 
+ .faq-section .btn-link {
+     font-weight: 400;
+     color: rgba(0, 21, 50, 0.9);
+     text-decoration: none;
+     outline: none;
+ }
+ 
+ .faq-section .btn-link:hover {
+     color: #023e7e;
+     text-decoration: none;
+ }
+
+/* ---------------  Blog Page ---------------  */
+
+.blog-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+}
+
+.blog-container h1 {
+    position: absolute;
+    z-index: 7;
+    top: 58%;
+    transform:translateY(-40%);
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    color:#001532;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 47px;
+    font-family: "Playfair Display";
+    mix-blend-mode:multiply;
+}
+
+.blog-container .img {
+ z-index: -3;
+}
+
+/* ---------------  Slider Transition HOME, BLOG & FAQ ---------------  */
+.slider-transition-1{
+    background: #001532;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.slider-transition-2 {
+    background: url('../img/pawel-czerwinski-unsplash-transition.jpg') no-repeat 50% 50%;
+    // background: #fafafa;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform: translateY(100vh);
+    z-index: 10;
+}
+
+/* ---------------  Remove Default Safari Style ---------------  */
+a[type=button], input[type=text],input[type=button], input[type=submit] {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+select {
+    appearance: none !important;
+}
+
+a:any-link {
+    text-decoration: none !important;
+}
+
   
 
 
@@ -452,7 +545,7 @@
         padding-right: 0;
     }
 
-    /* ---------------  First-Section ---------------  */
+    /* ---------------  HomePage First-Section ---------------  */
     .first-section {
         padding-top: 80px;
         height: 110vh;
@@ -497,9 +590,7 @@
     }
 
 
-
-  
-    /* ---------------  Second-Section A Propos ---------------  */    
+    /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .second-section {
         height: 120vh;
         margin-bottom: 100px;
@@ -532,12 +623,12 @@
         height: 305px;
     }
 
-    /* ---------------  Vos-Envies-Section ---------------  */
+    /* ---------------  HomePage Vos-Envies-Section ---------------  */
     .vos-envies {
         display: none;
     }
 
-    /* ---------------  Reservation-Section ---------------  */
+    /* ---------------  HomePage Reservation-Section ---------------  */
     .heading-4-reservation {
         margin-top: 240px;
     }
@@ -546,7 +637,7 @@
         padding-top: 140px;
     }
 
-    /* ---------------  Wave Aniamtion ---------------  */    
+    /* ---------------  HomePage Wave Aniamtion ---------------  */    
     .waves {
         height:60px;
         min-height:60px;
@@ -569,7 +660,7 @@
         padding-right: 0;
     }
 
-    /* ---------------  First-Section ---------------  */
+    /* ---------------  HomePage First-Section ---------------  */
     .first-section {
         padding-top: 190px;
     }
@@ -604,7 +695,7 @@
         }
     }
 
-    /* ---------------  Second-Section A Propos ---------------  */    
+    /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .img-boat, .a-propos-visual {
         width: 230px;
     }
@@ -613,12 +704,12 @@
         height: 400px;
     }
 
-    /* ---------------  Vos-Envies-Section ---------------  */
+    /* ---------------  HomePage Vos-Envies-Section ---------------  */
     .vos-envies {
         display: none;
     }
 
-    /* ---------------  Wave Aniamtion ---------------  */    
+    /* ---------------  HomePage Wave Aniamtion ---------------  */    
     .waves {
         height:40px;
         min-height:40px;
@@ -644,7 +735,7 @@
     }
 
     
-    /* ---------------  First-Section ---------------  */
+    /* ---------------  HomePage First-Section ---------------  */
     .visuals {
         right: 5%;
 
@@ -660,12 +751,12 @@
         }
     }
 
-    /* ---------------  Second-Section A Propos ---------------  */    
+    /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .img-boat, .a-propos-visual {
         width: 300px;
     }
 
-    /* ---------------  Vos-Envies-Section ---------------  */
+    /* ---------------  HomePage Vos-Envies-Section ---------------  */
     .vos-envies {
         display: none;
     }
@@ -690,7 +781,7 @@
     }
 
 
-    /* ---------------  First-Section ---------------  */
+    /* ---------------  HomePage First-Section ---------------  */
     .visuals {
         right: 5%;
 
@@ -707,7 +798,7 @@
     }
 
 
-    /* ---------------  Second-Section A Propos ---------------  */    
+    /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .img-boat, .a-propos-visual {
         width: 415px;
     }
@@ -725,7 +816,7 @@
         display: none;
     }
 
-    /* ---------------  First-Section ---------------  */
+    /* ---------------  HomePage First-Section ---------------  */
     .visuals {
         right: 16%;
 

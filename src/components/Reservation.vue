@@ -18,7 +18,6 @@
                     Nous vous appelons pour penser ensemble votre excursion et <br>
                     vous faire découvrir nos propositions en détail.
                 </p>
-                
                 <div class="form-reservation-section col-12 mx-auto">
                     <form v-on:submit.prevent="onSubmit">
                         <div class="form-row">
@@ -44,7 +43,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputDate">Choix de la date</label>
-                                <input type="date" format="dd-mm-yyyy" class="form-control" id="inputDate" placeholder="jj-mm-aaaa" v-model="reservationData.date" required>
+                                <input type="date" format="dd-mm-yyyy" class="form-control" id="inputDate" placeholder="aaaa-mm-jj" v-model="reservationData.date" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">Nombre de passager</label>
@@ -90,7 +89,6 @@ export default {
                 date:'',
                 numberOfPeople:'',
             },
-
             imgSailResa: require('@/assets/img/artyom-kabajev-Wy2BfDjvJA8-unsplash.jpg'),
             imgSeaResa: require('@/assets/img/das-sasha-VuBzplNNi0k-unsplash.jpg'),
         }
@@ -197,7 +195,7 @@ export default {
 
 <style scoped>
     button {
-        all: unset
+        all: unset;
     }
 
     button:focus {
