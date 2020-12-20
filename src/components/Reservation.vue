@@ -65,7 +65,18 @@
                         </button>
                     </form>
                 </div>
-                
+                <teleport to="#modals">
+                    <div v-if="modalReservation">
+                        <TransitionAnimation></TransitionAnimation>
+                        <div class="overlay-modal" @click="closeModalReservation"></div>
+                        <div class="reservation-modal">
+                            <a @click="closeModalReservation" class="close"></a>
+                            <h3>Merci de nous faire confiance <br> {{ reservationData.name }}</h3>
+                            <p>Nous avons bien reçu votre demande de réservation pour le {{ reservationData.frenchDateFormat }}</p>
+                            <p>Nous sommes sûrement en mer, nous vous contacterons une fois le pied à terre</p>
+                        </div>
+                    </div>
+                </teleport>    
             </div>
         </section>
     </div>
@@ -76,28 +87,46 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { Elastic, Linear } from 'gsap'
+import TransitionAnimation from './TransitionAnimation.vue'
 
 export default {
     name: 'Reservation',
+    components: {
+        TransitionAnimation,
+    },
     data () {
         return {
+            modalReservation: false,
             reservationData: {
                 name:'',
                 email:'',
                 city:'',
                 phone:'',
-                date:'',
                 numberOfPeople:'',
+                date:'',
+                frenchDateFormat: '',
             },
             imgSailResa: require('@/assets/img/artyom-kabajev-Wy2BfDjvJA8-unsplash.jpg'),
             imgSeaResa: require('@/assets/img/das-sasha-VuBzplNNi0k-unsplash.jpg'),
         }
     },
     methods: {
-        onSubmit () {
-            console.log(this.reservationData);
-            alert("Merci de nous faire confiance " + this.reservationData.name + ",nous vous contactons très prochainement !")
 
+        closeModalReservation() {
+            this.modalReservation = false  
+        },
+
+        onSubmit () {
+            // Convert Date from yyyy-mm-dd to dd-mm-yyyy
+            let splitDate = this.reservationData.date.split('-');
+            let year = splitDate[0];
+            let month = splitDate[1];
+            let day = splitDate[2]; 
+            this.reservationData.frenchDateFormat = day + '/' + month + '/' + year;
+            
+            //Open Modal & Console.log
+            this.modalReservation = true
+            console.log(this.reservationData);
         },   
 
         initScrollAnimationReservation(){

@@ -431,9 +431,66 @@
     }
 }
   
+/* ---------------  Modal with Teleport in Reservation.vue ---------------  */
+.reservation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 238px;
+    min-width: 376px;
+    background-color: white;
+    text-align: center;
+    z-index: 10;
+    padding: 100px 115px;
 
+}
+
+.reservation-modal h3 {
+    font-family: "Playfair Display";
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: rgba(0, 21, 50, 0.9);
+}
+
+.overlay-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #001532b4;
+    z-index: 9;
+}
+
+// Cross X Close the Modal
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  
 /* ---------------  Faq Page ---------------  */
-
 .faq-section {
     padding-top: 25vh;
  }
@@ -641,6 +698,12 @@ a:any-link {
         padding-top: 140px;
     }
 
+    /* ---------------  Modals with Teleport in Reservation.vue ---------------  */
+    .reservation-modal{ 
+        padding: 80px 30px;
+        min-width: 360px;
+    }
+
     /* ---------------  HomePage Wave Aniamtion ---------------  */    
     .waves {
         height:60px;
@@ -719,6 +782,11 @@ a:any-link {
         min-height:40px;
       }
 
+    /* ---------------  Modals with Teleport in Reservation.vue ---------------  */
+    .reservation-modal{ 
+        padding: 80px 30px;
+        min-width: 360px;
+    }
 
 }
 
