@@ -107,6 +107,18 @@
     cursor: pointer;
 }
 
+.call-to-scroll {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -1%);
+}
+
+.call-to-scroll img {
+    width: 50px;
+    opacity: 1;
+}
+
 /* ---------------  HomePage Second-Section A Propos ---------------  */
 .second-section {
     margin-top: 80px;
