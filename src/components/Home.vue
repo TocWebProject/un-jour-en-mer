@@ -32,10 +32,9 @@
       <div class="container mt-5">
         <h4 ref="heading4aPropos" class="heading-4 text-center">A Propos</h4>
         <h2 ref="heading2aPropos" class="heading-2-a-propos text-center">Prenez le large en toute confiance</h2>
-        <div class="box"></div>
         <div class="container">
-          <div class="info-a-propos">
-            <div class="col-6">
+          <div class="row info-a-propos">
+            <div class="col">
               <div class="a-propos-visual mx-auto">
                 <picture>
                   <source media="(max-width: 991px)" srcset="../assets/img/sensei-minimal-y2ctC6PnB6g-unsplash-portrait.png">
@@ -44,7 +43,7 @@
                 </picture> 
               </div>
             </div>
-            <div class="col-6 d-flex align-items-center">
+            <div class="col d-flex align-items-center">
               <div ref="infoApropos" class="info-a-propos_text">
                   <h3 class="heading-3-a-propos">
                     Nos incroyables skippers
@@ -61,6 +60,7 @@
         </div>
       </div> 
     </section>
+    <BoatsSwiper></BoatsSwiper>
     <VosEnvies></VosEnvies>
     <Reservation id="reservation"></Reservation>
     <section ref="sectionContactTrigger" class="section-contact pt-1" id="contact">
@@ -129,6 +129,7 @@
 import NavHome from "./NavHome.vue"
 import Reservation from './Reservation.vue' 
 import VosEnvies from './VosEnvies.vue'
+import BoatsSwiper from './BoatsSwiper.vue'
 import TransitionAnimation from './TransitionAnimation.vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -141,6 +142,7 @@ export default {
     NavHome,
     Reservation,
     VosEnvies,
+    BoatsSwiper,
     TransitionAnimation,
   },
   data() {

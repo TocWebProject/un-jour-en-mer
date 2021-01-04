@@ -159,7 +159,7 @@
 }
 
 .heading-3-a-propos {
-    padding-top: 30px;
+    padding-top: 5px;
     padding-bottom: 10px;
     font-size: 24px;
     color: rgba(0, 21, 50, 0.9);
@@ -683,6 +683,9 @@ a:any-link {
         flex: 0 0 100%;
         max-width: 100%;
     }
+    .heading-3-a-propos {
+        padding-top: 50px;
+    }
 
     .heading-4 {
         margin-top: 140px;
@@ -775,8 +778,12 @@ a:any-link {
     }
 
     /* ---------------  HomePage Second-Section A Propos ---------------  */    
+    .info-a-propos {
+        flex-direction: column;
+    }
+
     .img-boat, .a-propos-visual {
-        width: 230px;
+        width: 380px;
     }
 
     .a-propos-visual{
