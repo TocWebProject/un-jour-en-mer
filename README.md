@@ -3,13 +3,17 @@
 <p>Homepage Screenshot</p>
 <img src="src/assets/img/screenshot-landingpage.png" style="width: 50%">
 
-<p>Perspectives d'amélioration:</p>
+<p>Dernières améliorations V0.1.1 </p>
 <ul>
     <li>Custom 404 Page</></li>
     <li>Implémentation d'un slider présentation des voiliers</li>
+    <li>Effets transitions entre les pages</li> 
+</ul>
+
+<p>Perspectives d'amélioration:</p>
+<ul>
     <li>Blog: Création des pages articles / single article</li> 
     <li>Amélioration SEO / Metadonnées</li> 
-    <li>Effets transitions entre les pages</li> 
 </ul>
 
 

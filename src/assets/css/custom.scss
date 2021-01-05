@@ -141,7 +141,7 @@
 }
 
 
-.heading-4 {
+.heading-4-a-propos {
     margin-top: 150px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -382,6 +382,14 @@
     width: 260px;
     height: 260px;
     object-fit: cover;
+}
+
+.contact-info-mail a {
+    color: #212529;
+}
+
+.contact-info-mail a:hover {
+    color: #212529da;
 }
 
 .row-info-contact {
@@ -687,7 +695,7 @@ a:any-link {
         padding-top: 50px;
     }
 
-    .heading-4 {
+    .heading-4-a-propos {
         margin-top: 140px;
     }
 
