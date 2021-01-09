@@ -204,7 +204,7 @@
 .vos-envies-section .navigation-wrapper ul {
     margin-top: 50px;
     margin-left: 30px;
-    margin-bottom: 180px;
+    margin-bottom: 150px;
     padding-bottom: 150px;
     font-weight: 700;
     list-style: none;
@@ -714,11 +714,11 @@ a:any-link {
 
     /* ---------------  HomePage Reservation-Section ---------------  */
     .heading-4-reservation {
-        margin-top: 240px;
+        margin-top: 120px;
     }
 
     .container-reservation{
-        padding-top: 140px;
+        padding-top: 10px;
     }
 
     /* ---------------  Modals with Teleport in Reservation.vue ---------------  */
@@ -937,7 +937,7 @@ a:any-link {
 
 
     .vos-envies-section {
-        min-height: 190vh;
+        min-height: 160vh;
     }
 
 }

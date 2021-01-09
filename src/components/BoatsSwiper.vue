@@ -1,14 +1,14 @@
 <template>
   <section class="section-boats-swiper">
     <div class="container mt-5">
-      <h4 ref="heading4aPropos" class="heading-4-boats-swiper text-center">Nos navires</h4>
-      <h2 ref="heading2aPropos" class="heading-2-a-propos text-center">Naviguez sur des bateaux légendaires</h2>
+      <h4 ref="heading4Boats" class="heading-4-boats-swiper text-center">Nos navires</h4>
+      <h2 ref="heading2Boats" class="heading-2-a-propos text-center">Naviguez sur des bateaux légendaires</h2>
       <div class="d-flex flex-wrap">
         <div class="text-boat-swiper d-flex align-items-center mx-auto">
-          <div class="ml-5">
+          <div class="ml-4">
             <!-- Tontouta / Boreal -->
-            <div class="tontouta-text mb-5">
-              <a class="h5" @click="showTextBoreal = !showTextBoreal, iconAnimationBoreal()">
+            <div ref="linkBoreal" class="tontouta-text">
+              <a class="h5" @click="showTextBoreal = !showTextBoreal, infoAnimationBoreal()">
                 Tontouta - <span class="boat-brand">Boreal</span> 
                   <svg ref="iconBoreal" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#001533" class="bi bi-arrow-down-circle mb-1 ml-2" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
@@ -17,9 +17,9 @@
               <p ref="textBoreal" v-show="showTextBoreal">zef fze fzeffzef fzefzfez fzzf zfzf fze fzeffzef fzefzfez fzzf zfzf fze fzeffzef fzefzfez fzzf zfzf</p>
             </div>
             <!-- Déphéméride / Prototype -->
-            <div class="dephemeride-text mt-5">
-              <a class="h5" @click="showTextPrototype = !showTextPrototype, iconAnimationPrototype()">
-                Déphéméride - <span class="boat-brand">Prototype</span> 
+            <div ref="linkPrototype" class="dephemeride-text">
+              <a class="h5" @click="showTextPrototype = !showTextPrototype, infoAnimationPrototype()">
+                Déphéméride - <span class="boat-brand">Prototype Mini</span> 
                 <svg ref="iconPrototype" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#001533" class="bi bi-arrow-down-circle mb-1 ml-2" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
                 </svg>
@@ -87,6 +87,8 @@
   SwiperCore.use([Navigation, Pagination, Keyboard, A11y]);
 
   import { gsap } from  "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
   export default {
     name: 'BoatsSwiper',
@@ -107,21 +109,53 @@
       onSlideChange() {
         console.log('slide change')
       },
+      initScrollAnimBoats() {
+        const { heading4Boats, heading2Boats} = this.$refs
 
-      iconAnimationBoreal(){
-        const { iconBoreal, textBoreal } = this.$refs
+          gsap.from(heading2Boats, {
+          scrollTrigger: {
+            trigger: heading2Boats,
+            scrub: 1,
+            toggleClass: 'active',
+            start: 'top 95%'
+          },
+          duration: 1.5,
+          y: -40,
+          opacity: 0,
+        })
+
+        gsap.from(heading4Boats, {
+          scrollTrigger: {
+            trigger: heading4Boats,
+            scrub: 1,
+            toggleClass: 'active',
+            start: 'top 95%'
+          },
+          duration: 1.5,
+          y: -40,
+          opacity: 0,
+        })
+      },
+
+      infoAnimationBoreal(){
+        const { iconBoreal, textBoreal, linkBoreal } = this.$refs
 
         if(this.showTextBoreal === true) {
 
           gsap.to(iconBoreal, {
-              rotation:"180_cw",
-              duration: 0.3,
-            },
-           ) 
+            rotation:"180_cw",
+            duration: 0.3,
+            }) 
+
+           gsap.to(linkBoreal, {
+             y: "-10px",
+             duration: 0.7,
+           })
 
            gsap.from(textBoreal, {
-             opacity: 0, 
-             y: 25,
+            opacity: 0, 
+            y: 10,
+            duration: 1,
            })
 
         } else {
@@ -129,11 +163,17 @@
               rotation:"0_cw",
               duration: 0.3,
             }) 
+
+            gsap.to(linkBoreal, {
+             y: "10px",
+             duration: 1,
+           })
+           
          }
       },
 
-      iconAnimationPrototype(){
-        const { iconPrototype, textPrototype } = this.$refs
+      infoAnimationPrototype(){
+        const { iconPrototype, textPrototype, linkPrototype } = this.$refs
  
         if(this.showTextPrototype === true){
           gsap.to(iconPrototype, {
@@ -141,9 +181,15 @@
               duration: 0.3,
             }) 
 
+           gsap.to(linkPrototype, {
+             y: "-10px",
+             duration: 0.7,
+           }) 
+
            gsap.from(textPrototype, {
              opacity: 0, 
-             y: 25,
+             y: 20,
+             duration: 1,
            })
 
         } else {
@@ -151,10 +197,19 @@
               rotation:"0_cw",
               duration: 0.3,
             }) 
+
+            gsap.to(linkPrototype, {
+             y: "15px",
+             duration: 1,
+           }) 
+
          }
       }
 
     },
+    mounted() {
+      this.initScrollAnimBoats();
+    }
   };
 </script>
 
@@ -229,12 +284,18 @@
   font-size: 13px
 }
 
-.text-boat-swiper{
+.text-boat-swiper {
   width: 380px;
   order: 2;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
+.text-boat-swiper p {
+  font-size: 17px;  
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
 .text-boat-swiper a {
   color:rgba(0, 21, 50, 0.9);
   cursor: pointer;
@@ -248,8 +309,14 @@
   }
 }
 
+.tontouta-text {
+  margin-bottom: 50px;
+}
 
-
+.dephemeride-text {
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
 
 //MEDIA QUERIES
 
@@ -257,16 +324,19 @@
 @media screen and (min-width: 100px) and (max-width: 576px) { 
 
   .heading-4-boats-swiper {
-    margin-top: 140px;
+    margin-top: 180px;
   }
 
   .section-swiper-boreal {
     padding-top: 300px;
-}
+    padding-bottom: 40px; 
+  }
+
 }
 
 // Small devices (landscape phones, less than 769px)    
 @media screen and (min-width: 577px) and (max-width: 768px) {
+
 }
 
 
@@ -274,13 +344,10 @@
 // Medium devices (tablets, less than 992px)
 @media screen and (min-width: 769px) and (max-width: 991px) {
   
-
 }
 
 // Large devices (desktops, less than 1200px)
 @media screen and (min-width: 992px) and (max-width: 1200px) { 
-
-
 
 }
 
@@ -290,9 +357,10 @@
      order: 2;
   }
 
-  .text-boat-swiper{
+  .text-boat-swiper {
     order: 1;
     margin-top: 0px;
   }
+
 }
 </style>
