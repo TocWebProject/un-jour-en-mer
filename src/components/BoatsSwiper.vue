@@ -314,7 +314,7 @@
 }
 
 .dephemeride-text {
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 80px;
 }
 

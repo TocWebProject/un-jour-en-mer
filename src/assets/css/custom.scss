@@ -88,7 +88,7 @@
     .heading-1{
         font-size: 57px;
         font-weight: 600;   
-        color: rgba(0, 21, 50, 0.9);
+        color: rgba(0, 21, 50, 0.95);
         font-family: 'Playfair Display';
     }
 
@@ -109,14 +109,24 @@
 
 .call-to-scroll {
     position: absolute;
-    bottom: 1%;
+    bottom: 0.5%;
     left: 50%;
-    transform: translate(-50%, -1%);
+    transform: translate(-50%, -0.5%);
 }
 
 .call-to-scroll img {
     width: 50px;
     opacity: 1;
+}
+
+.call-to-scroll-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50.2%;
+    transform: translate(-50.2%, -5%);
+    letter-spacing: 1.5px;
+    color: #696969;
+    font-size: 10px;
 }
 
 /* ---------------  HomePage Second-Section A Propos ---------------  */

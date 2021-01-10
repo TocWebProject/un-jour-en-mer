@@ -25,7 +25,10 @@
             </svg>
           </a>
         </div>
-        <div class="call-to-scroll"><img ref="callToScroll" src="../assets/img/scroll-down.gif" alt=""></div>
+        <div class="call-to-scroll">
+          <img ref="callToScroll" src="../assets/img/scroll-down.gif" alt="">
+        </div>
+        <span ref="callToScrollText" class="call-to-scroll-text">SCROLL</span>
       </div>
     </section>
     <section class="second-section pt-1" id="apropos">
@@ -153,7 +156,7 @@ export default {
   methods:{
 
     initialHomeAnimation(){
-      const { infoFirstSection, imgSail, imgSea, callToScroll } = this.$refs
+      const { infoFirstSection, imgSail, imgSea, callToScroll, callToScrollText } = this.$refs
       const timelineHome = new TimelineLite()
 
       timelineHome.from(infoFirstSection, {
@@ -181,10 +184,15 @@ export default {
         opacity: 0,
       },"+=1.2")
 
+      timelineHome.from(callToScrollText, {
+        duration: 1,
+        opacity: 0,
+      },"+=0.1")
+
     },
 
     initScrollAnimation(){
-      const {  imgSail, imgSea, heading1, callToScroll, heading2aPropos, heading4aPropos, aProposVisual, infoApropos, heading2reservation, heading4reservation, contactInfoMail, contactInfoPhone, contactInfoCity, imgContact } = this.$refs
+      const {  imgSail, imgSea, heading1, callToScroll, callToScrollText, heading2aPropos, heading4aPropos, aProposVisual, infoApropos, heading2reservation, heading4reservation, contactInfoMail, contactInfoPhone, contactInfoCity, imgContact } = this.$refs
       // HOME
       gsap.to(imgSail, {
         scrollTrigger:{
@@ -229,6 +237,16 @@ export default {
         y: 60,
         width: 0,
       })
+
+      gsap.to(callToScrollText, {
+        scrollTrigger:{
+          trigger: callToScrollText,
+          start: 'top 79%',
+          toggleClass: 'active',
+          toggleActions: "restart resume reverse reverse"
+        },
+        scale: 0,
+        })
 
       // A PROPOS
       gsap.from(heading2aPropos, {
