@@ -37,6 +37,7 @@ import { gsap, Expo } from 'gsap'
 
 export default {
   name: 'VosEnvies',
+  props:['mode'],
   methods: {
 
     //TITLE SCROLLTRIGGER

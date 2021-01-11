@@ -20,6 +20,7 @@ export default {
     components: {
         TransitionAnimation,
     },
+    props:['mode'],
     data () {
         return {
             video404: require('@/assets/video/Pexels-Videos-4513.mp4'),

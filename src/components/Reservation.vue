@@ -94,6 +94,7 @@ export default {
     components: {
         TransitionAnimation,
     },
+    props:['mode'],
     data () {
         return {
             modalReservation: false,

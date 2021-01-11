@@ -96,6 +96,7 @@
       Swiper,
       SwiperSlide,
     },
+    props:['mode'],
     data() {
       return {
         showTextBoreal: false,

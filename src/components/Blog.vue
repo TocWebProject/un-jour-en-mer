@@ -23,6 +23,7 @@ export default {
         NavBlogAndFaq,
         TransitionAnimation,
     },
+    props:['mode'],
     methods: {
         animImgBlog(){
             const { imgBlog, h1Blog } = this.$refs
