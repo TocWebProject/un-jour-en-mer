@@ -25,16 +25,18 @@ body {
     height: 100%;
     color :#282f36;
     background-color: #fff;
+    transition: background 0.3s ease-in-out;
 }
 
 /* ---------------  Navbar ---------------  */
 .navigation {
     position: absolute;
     z-index: 8;
+    width: 100%;
 }
 
 .navbar{
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 0.8rem;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -98,7 +100,7 @@ body {
 
 .info-first-section {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 10%;
     padding: 10px 20px;
     background-color: rgba(250, 250, 250, 0.4);
@@ -125,14 +127,27 @@ body {
     cursor: pointer;
 }
 
-.call-to-scroll {
+.call-to-scroll-black {
     position: absolute;
     bottom: 0.5%;
     left: 50%;
     transform: translate(-50%, -0.5%);
 }
 
-.call-to-scroll img {
+.call-to-scroll-black img {
+    width: 50px;
+    opacity: 1;
+}
+
+.call-to-scroll-white {
+    display: none;
+    position: absolute;
+    bottom: 0.1%;
+    left: 50%;
+    transform: translate(-50%, -0.1%);
+}
+
+.call-to-scroll-white img {
     width: 50px;
     opacity: 1;
 }
@@ -413,6 +428,7 @@ body {
 }
 
 .contact-info-mail a {
+    padding-left: 10px;
     color: #212529;
 }
 
@@ -580,18 +596,23 @@ body {
 .blog-container h1 {
     position: absolute;
     z-index: 7;
-    top: 58%;
-    transform:translateY(-40%);
+    top: 50%;
+    transform:translateY(-50%);
     left: 50%;
     transform: translateX(-50%);
     font-weight: 500;
     color:#001532;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 47px;
+    font-size: 42px;
     font-family: "Playfair Display";
     mix-blend-mode:multiply;
 }
+
+.blog-container .img-fluid {
+    width: 95%;
+    margin: auto;
+   }
 
 .blog-container .img {
  z-index: -3;
@@ -754,6 +775,17 @@ a:any-link {
     .container-reservation{
         padding-top: 10px;
     }
+    /* ---------------  Blog Page ---------------  */
+
+    .blog-container h1 {
+        font-size: 38px;
+    }
+    
+    .blog-container .img-fluid {
+        width: 95%;
+        margin: auto;
+    }
+
 
     /* ---------------  Modals with Teleport in Reservation.vue ---------------  */
     .reservation-modal{ 
@@ -965,7 +997,7 @@ a:any-link {
     }
 
     .info-first-section {
-        top: 57%;
+        top: 45%;
         left: 16%;
     }
 

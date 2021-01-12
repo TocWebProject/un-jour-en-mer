@@ -52,7 +52,7 @@ export default {
             })
 
             gsap.to(h1Blog, {
-                y: -150,
+                y: -75,
                 color: '#85b8ff',
                 ease: Expo.easeInOut,
             })

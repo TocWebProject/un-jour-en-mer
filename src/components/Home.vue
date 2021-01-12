@@ -25,8 +25,11 @@
             </svg>
           </a>
         </div>
-        <div class="call-to-scroll">
-          <img ref="callToScroll" src="../assets/img/scroll-down.gif" alt="">
+        <div class="call-to-scroll-black">
+          <img ref="callToScrollBlack" src="../assets/img/scroll-down-black.gif" alt="scroll down">
+        </div>
+        <div class="call-to-scroll-white">
+          <img ref="callToScrollWhite" src="../assets/img/scroll-down-white.gif" alt="scroll down">
         </div>
         <span ref="callToScrollText" class="call-to-scroll-text">SCROLL</span>
       </div>
@@ -157,7 +160,7 @@ export default {
   methods:{
 
     initialHomeAnimation(){
-      const { infoFirstSection, imgSail, imgSea, callToScroll, callToScrollText } = this.$refs
+      const { infoFirstSection, imgSail, imgSea, callToScrollBlack, callToScrollWhite, callToScrollText } = this.$refs
       const timelineHome = new TimelineLite()
 
       timelineHome.from(infoFirstSection, {
@@ -180,10 +183,17 @@ export default {
         y: 40,
       },"-=0.5")
 
-      timelineHome.from(callToScroll, {
-        duration: 1,
-        opacity: 0,
-      },"+=1.2")
+      if (this.mode === "light") {
+        timelineHome.from(callToScrollBlack, {
+          duration: 1.5,
+          opacity: 0,
+        },"+=1.2")
+      } else {
+        timelineHome.from(callToScrollWhite, {
+          duration: 1.5,
+          opacity: 0,
+        },"+=1.2")
+      }
 
       timelineHome.from(callToScrollText, {
         duration: 1,
@@ -193,7 +203,7 @@ export default {
     },
 
     initScrollAnimation(){
-      const {  imgSail, imgSea, heading1, callToScroll, callToScrollText, heading2aPropos, heading4aPropos, aProposVisual, infoApropos, heading2reservation, heading4reservation, contactInfoMail, contactInfoPhone, contactInfoCity, imgContact } = this.$refs
+      const {  imgSail, imgSea, heading1, callToScrollBlack, callToScrollWhite, callToScrollText, heading2aPropos, heading4aPropos, aProposVisual, infoApropos, heading2reservation, heading4reservation, contactInfoMail, contactInfoPhone, contactInfoCity, imgContact } = this.$refs
       // HOME
       gsap.to(imgSail, {
         scrollTrigger:{
@@ -216,28 +226,54 @@ export default {
         scale: 1.4,
       
       })
+      
+      if (this.mode === "light") {
+        gsap.to(heading1, {
+          scrollTrigger:{
+            trigger: heading1,
+            scrub: 1,
+            start: '150% center',
+          },
+          duration: 1.5,
+          scale: 1.05,
+          color: '#fff',
+        })
+      } else {
+        gsap.to(heading1, {
+          scrollTrigger:{
+            trigger: heading1,
+            scrub: 1,
+            start: '150% center',
+          },
+          duration: 1.5,
+          scale: 1.05,
+          color: '#001532',
+        })
+      }
 
-      gsap.to(heading1, {
-        scrollTrigger:{
-          trigger: heading1,
-          scrub: 1,
-          start: '150% center',
-        },
-        duration: 1.5,
-        scale: 1.05,
-        color: '#fff',
-      })
-
-      gsap.to(callToScroll, {
-        scrollTrigger:{
-          trigger: callToScroll,
-          start: 'top 80%',
-          toggleClass: 'active',
-          toggleActions: "restart resume reverse reverse"
-        },
-        y: 60,
-        width: 0,
-      })
+      if (this.mode === "light") {
+        gsap.to(callToScrollBlack, {
+          scrollTrigger:{
+            trigger: callToScrollBlack,
+            start: 'top 80%',
+            toggleClass: 'active',
+            toggleActions: "restart resume reverse reverse"
+          },
+          y: 60,
+          width: 0,
+        })
+      } else {
+        gsap.to(callToScrollWhite, {
+          scrollTrigger:{
+            trigger: callToScrollWhite,
+            start: 'top 80%',
+            toggleClass: 'active',
+            toggleActions: "restart resume reverse reverse"
+          },
+          y: 60,
+          width: 0,
+        })
+      }
 
       gsap.to(callToScrollText, {
         scrollTrigger:{

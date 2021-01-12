@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="navigation container-fluid">
+    <section class="navigation">
       <nav id="navbar-un-jour-en-mer" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <div class="navbar-brands">Un Jour en Mer</div>

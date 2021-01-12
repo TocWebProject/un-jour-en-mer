@@ -2,7 +2,7 @@
   <section class="section-boats-swiper">
     <div class="container mt-5">
       <h4 ref="heading4Boats" class="heading-4-boats-swiper text-center">Nos navires</h4>
-      <h2 ref="heading2Boats" class="heading-2-a-propos text-center">Naviguez sur des bateaux légendaires</h2>
+      <h2 ref="heading2Boats" class="heading-2-boats-swiper text-center">Naviguez sur des bateaux légendaires</h2>
       <div class="d-flex flex-wrap">
         <div class="text-boat-swiper d-flex align-items-center mx-auto">
           <div class="ml-4">
@@ -231,6 +231,15 @@
   font-size: 15px;
 }
 
+.heading-2-boats-swiper {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: rgba(0, 21, 50, 0.9);
+    font-size: 45px;
+    font-family: 'Playfair Display';
+    font-weight: 500;
+}
+
 .swiper-container {
     width: 700px;
     height: 400px;
@@ -241,7 +250,7 @@
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: transparent;
     width: 330px;
     height: 450px;
 
@@ -297,6 +306,7 @@
   margin-top: 5px;
   margin-bottom: 0px;
 }
+
 .text-boat-swiper a {
   color:rgba(0, 21, 50, 0.9);
   cursor: pointer;

@@ -18,15 +18,14 @@
 
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-      }
+    }
 
 
     /* ---------------  HomePage First-Section ---------------  */
-
     .info-first-section {
         background-color: rgba(0, 21, 50, 0.5);
     
-        .heading-1{
+        .heading-1 {
             color: rgba(199, 218, 245, 0.95);
         }
     }
@@ -35,8 +34,150 @@
         fill: white;
     }
 
-    .btnRoundAnimated :first-child {
-        fill: lightblue;
+    .call-to-scroll-black {
+        display: none;
     }
 
+    .call-to-scroll-white {
+        display: inline;
+    }
+
+    .call-to-scroll-white img {
+        opacity: 0.6;
+    }
+
+    .call-to-scroll-text {
+        bottom: 9%;
+        left: 50.2%;
+        transform: translate(-50.2%, -9%);
+    }
+
+    /* ---------------  HomePage Second-Section A Propos ---------------  */
+    .heading-2-a-propos {
+        color: rgba(199, 218, 245, 0.95);
+    }
+
+    /* ---------------  HomePage Boats Swiper ---------------  */
+    .heading-2-boats-swiper {
+        color: rgba(199, 218, 245, 0.95);
+    }
+
+    .swiper-pagination-bullet{
+        background-color: white;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: rgba(199, 218, 245, 0.95);
+    }
+
+    .text-boat-swiper p {
+        color: white;
+    }
+    
+    .text-boat-swiper a {
+        color:rgb(133, 184, 255);
+        cursor: pointer;
+
+        svg {
+            fill: rgb(133, 184, 255);
+        }
+    }
+    
+    .text-boat-swiper a:hover {
+        text-decoration: none;
+        color: rgba(224, 237, 255, 0.9);
+        svg {
+            fill: rgba(224, 237, 255, 0.9);
+        }
+    }
+
+    /* ---------------  HomePage Vos-Envies-Section (Only Desktop) ---------------  */
+    .heading-2-vos-envies {
+        color: white;
+    }
+
+    .navigation-item span:before {
+        color: white;
+    }
+
+    /* ---------------  HomePage Réservation-Section ---------------  */
+    .heading-2-reservation {
+        color:rgb(133, 184, 255);
+    }
+
+    .form-control {
+        background-color: rgb(214, 227, 245);
+    }
+
+    .form-reservation-section label {
+        color: rgb(193, 218, 253);
+    }
+
+    .text-btnRound {
+        fill: white;
+    }
+
+    /* ---------------  HomePage Contact Section ---------------  */
+    .heading-3-contact {
+        color:rgb(133, 184, 255);
+    }
+
+    .contact-info-mail a {
+        color: white;
+    }
+    
+    .contact-info-mail a:hover {
+        color:rgb(133, 184, 255);
+    }
+
+    .social a {
+        color: #f0f0f0;
+    }
+    
+    .social a:hover {
+        color:rgb(133, 184, 255);
+    }
+    
+    /* ---------------  HomePage Wave Animation Bottom ---------------  */
+    .parallax use:first-child{
+        fill: rgb(194, 220, 253);
+    }
+
+    .parallax use:nth-child(2){
+        fill: rgb(133, 184, 255);
+    }
+
+    .parallax use:nth-child(3){
+        fill: rgba(139, 180, 245, 0.8);
+    }
+
+    .parallax use:nth-child(4){
+        fill: rgba(94, 155, 247, 0.8);
+    }
+
+    /* ---------------  Faq Page ---------------  */
+    .faq-section .btn-link {
+        color: white;
+    }
+    
+    .faq-section .btn-link:hover {
+        color: rgb(133, 184, 255);
+
+    }
+
+    .faq-section .card-header {
+        background-color: #082958;
+    }
+
+    .faq-section .card-body {
+        color: whitesmoke;
+        background-color: #0b3672;
+    }
+    /* ---------------  Slider Transition HOME, BLOG & FAQ ---------------  */
+    .slider-transition-1 {
+        background: rgb(194, 220, 253);
+    }
+    
 }
+
+

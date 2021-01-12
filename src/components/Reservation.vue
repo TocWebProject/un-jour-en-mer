@@ -60,7 +60,7 @@
                         <button type="submit">
                             <svg ref="btnRoundAnimated" class="btnRoundAnimated" @mouseenter="animBtn()" @mouseleave="reverseAnimBtn()" xmlns="http://www.w3.org/2000/svg" width="180" height="60" viewBox="0 0 220 60">
                                 <rect x="0" y="0" width="60" height="60" rx="30" ry="30" fill="#85b8ff" style="opacity: 0.4;" /> 
-                                <text ref="textBtnRoundAnimated" transform="translate(70 38)" text-anchor="middle" font-size="20" fill="#000">Envoyer</text>
+                                <text ref="textBtnRoundAnimated" class="text-btnRound" transform="translate(70 38)" text-anchor="middle" font-size="20" fill="#000">Envoyer</text>
                             </svg>
                         </button>
                     </form>
@@ -186,34 +186,64 @@ export default {
         animBtn() {
         const { btnRoundAnimated, textBtnRoundAnimated } = this.$refs
 
-        gsap.to(btnRoundAnimated.children[0], 0.4, {
-            attr:{width:140, 
-            fill:"#001532"}, 
-            autoAlpha: 0.8, 
-            ease: Elastic.easeOut.config(1, 1),
-            })
+            if (this.mode === "light") {
+                gsap.to(btnRoundAnimated.children[0], 0.4, {
+                    attr:{width:140, 
+                    fill:"#001532"}, 
+                    autoAlpha: 0.8, 
+                    ease: Elastic.easeOut.config(1, 1),
+                })
+        
+                gsap.to(textBtnRoundAnimated, 0.2, {
+                    fill:"#fff",
+                    ease: Linear.easeNone,
+                }, 0);
 
-        gsap.to(textBtnRoundAnimated, 0.2, {
-            fill:"#fff",
-            ease: Linear.easeNone,
-        }, 0);
+            } else {
+                gsap.to(btnRoundAnimated.children[0], 0.4, {
+                    attr:{width:140, 
+                    fill:"#9dc1f5"}, 
+                    autoAlpha: 0.8, 
+                    ease: Elastic.easeOut.config(1, 1),
+                })
+    
+                gsap.to(textBtnRoundAnimated, 0.2, {
+                    fill:"#000",
+                    ease: Linear.easeNone,
+                }, 0);
+            }
         },
 
         reverseAnimBtn() {
             const { btnRoundAnimated, textBtnRoundAnimated } = this.$refs
 
-            gsap.to(btnRoundAnimated.children[0], 0.4, {
-                attr:{width:60, 
-                fill:"#85b8ff"}, 
-                
-                opacity: 0.4,
-                ease: Elastic.easeOut.config(1, 1),
+            if (this.mode === "light") {
+                gsap.to(btnRoundAnimated.children[0], 0.4, {
+                    attr:{width:60, 
+                    fill:"#85b8ff"}, 
+                    
+                    opacity: 0.4,
+                    ease: Elastic.easeOut.config(1, 1),
+                    })
+    
+                gsap.to(textBtnRoundAnimated, 0.2, {
+                    fill:"#000",
+                    ease: Linear.easeNone,
+                }, 0);
+            } else {
+                gsap.to(btnRoundAnimated.children[0], 0.4, {
+                    attr:{width:60, 
+                    fill:"#c7daf5"}, 
+                    opacity: 0.4,
+                    ease: Elastic.easeOut.config(1, 1),
                 })
-
-            gsap.to(textBtnRoundAnimated, 0.2, {
-                fill:"#000",
+  
+                gsap.to(textBtnRoundAnimated, 0.2, {
+                fill:"#fff",
                 ease: Linear.easeNone,
-            }, 0);
+                }, 0);
+            }
+
         }
     },
 
