@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <TransitionAnimation></TransitionAnimation>
+  <div ref="homePage">
+    <TransitionAnimation :mode="mode"></TransitionAnimation>
     <NavHome></NavHome>
     <section class="first-section" id="home">
       <div class="container pt-1">
@@ -12,6 +12,7 @@
             <img ref="imgSea" class="img-sea" src="../assets/img/artiom-vallat-hb11GxbubPA-unsplash.jpg" alt="">
           </div>
         </div>
+        <ToggleDarkMode :mode="mode" @toggle-dark="$emit('toggle-dark')"></ToggleDarkMode>
         <div ref="infoFirstSection" class="info-first-section">
           <h1 ref="heading1" class="heading-1">Un Jour en Mer</h1>
           <p ref="paragraphHome" class="paragraph">
@@ -21,7 +22,7 @@
           <a type="button" href="#apropos">
             <svg ref="btnRoundAnimated" class="btnRoundAnimated" @mouseenter="animBtn()" @mouseleave="reverseAnimBtn()" xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="0 0 220 60">
               <rect x="0" y="0" width="60" height="60" rx="30" ry="30" fill="#c7daf5" style="opacity: 0.4;" /> 
-              <text ref="textBtnRoundAnimated" class="text-btnRound" transform="translate(80 38)" text-anchor="middle" font-size="20" fill="#000">Embarquer</text>
+              <text ref="textBtnRoundAnimated" class="text-btnRound" transform="translate(80 38)" text-anchor="middle" font-size="20">Embarquer</text>
             </svg>
           </a>
         </div>
@@ -68,7 +69,7 @@
     </section>
     <BoatsSwiper></BoatsSwiper>
     <VosEnvies></VosEnvies>
-    <Reservation id="reservation"></Reservation>
+    <Reservation id="reservation" :mode="mode"></Reservation>
     <section ref="sectionContactTrigger" class="section-contact pt-1" id="contact">
       <div class="container">
         <h4 ref="heading4reservation" class="heading-4-contact text-center">Contact</h4>
@@ -137,6 +138,7 @@ import Reservation from './Reservation.vue'
 import VosEnvies from './VosEnvies.vue'
 import BoatsSwiper from './BoatsSwiper.vue'
 import TransitionAnimation from './TransitionAnimation.vue'
+import ToggleDarkMode from './ToggleDarkMode'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -150,15 +152,10 @@ export default {
     VosEnvies,
     BoatsSwiper,
     TransitionAnimation,
+    ToggleDarkMode,
   },
   props:['mode'],
-  data() {
-    return {
-      
-    };
-  },
   methods:{
-
     initialHomeAnimation(){
       const { infoFirstSection, imgSail, imgSea, callToScrollBlack, callToScrollWhite, callToScrollText } = this.$refs
       const timelineHome = new TimelineLite()
@@ -226,7 +223,7 @@ export default {
         scale: 1.4,
       
       })
-      
+
       if (this.mode === "light") {
         gsap.to(heading1, {
           scrollTrigger:{
@@ -283,7 +280,7 @@ export default {
           toggleActions: "restart resume reverse reverse"
         },
         scale: 0,
-        })
+      })
 
       // A PROPOS
       gsap.from(heading2aPropos, {
@@ -443,7 +440,6 @@ export default {
         }, 0);
 
       }
-
     },
 
     reverseAnimBtn() {
@@ -452,8 +448,7 @@ export default {
       if (this.mode === "light") {
         gsap.to(btnRoundAnimated.children[0], 0.4, {
             attr:{width:60, 
-            fill:"#c7daf5"}, 
-            
+            fill:"#c7daf5"},  
             opacity: 0.4,
             ease: Elastic.easeOut.config(1, 1),
           })
@@ -478,10 +473,6 @@ export default {
 
       }
     }
-
-
-
-
   },
 
   mounted() {

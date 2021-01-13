@@ -42,11 +42,6 @@ import { TimelineLite } from 'gsap'
 
 export default {
   name: 'NavHome',
-  data() {
-    return {
-      
-    };
-  },
   methods: {
 
     homeMenuAnimationAndTransition(){ 

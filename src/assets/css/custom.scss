@@ -25,7 +25,7 @@ body {
     height: 100%;
     color :#282f36;
     background-color: #fff;
-    transition: background 0.3s ease-in-out;
+    transition: background 5s ease-in-out;
 }
 
 /* ---------------  Navbar ---------------  */
@@ -33,6 +33,8 @@ body {
     position: absolute;
     z-index: 8;
     width: 100%;
+    background: white;
+    transition: background 5s ease-in-out;
 }
 
 .navbar{
@@ -49,7 +51,7 @@ body {
 }
 
 .bg-light {
-    background-color: rgba(255, 255, 255, 0.95) !important;
+    background: transparent !important;
     outline: none;
 }
 
@@ -104,6 +106,7 @@ body {
     left: 10%;
     padding: 10px 20px;
     background-color: rgba(250, 250, 250, 0.4);
+    transition: background-color 5s ease-in-out;
 
     .heading-1{
         font-size: 57px;
@@ -127,6 +130,11 @@ body {
     cursor: pointer;
 }
 
+.text-btnRound {
+    fill:  rgb(0, 0, 0);
+}
+
+//Call To Scroll
 .call-to-scroll-black {
     position: absolute;
     bottom: 0.5%;
@@ -162,6 +170,73 @@ body {
     font-size: 10px;
 }
 
+// DarkMode Toggle
+.toggle-wrapper {
+    position: absolute;
+    top: 150px;
+    left: 20%;
+    z-index: 3;
+    
+    .toggle {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 22px;
+    }
+
+    .toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .toggler {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #152028;
+        -webkit-transition: 0.1s;
+        transition: 0.1s;
+    }
+
+    .toggler:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 4px;
+        bottom: 4px;
+        background: white;
+        -webkit-transition: 0.1s;
+        transition: 0.1s;
+    }
+
+    input:checked + .toggler {
+        background: rgb(133, 184, 255);
+    }
+
+    input:focus + .toggler{
+        box-shadow: 0 0 2px rgb(133, 184, 255);
+    }
+
+    input:checked + .toggler:before {
+        -webkit-transform: (24px);
+        -ms-transform: (24px);
+        transform: translateX(24px);
+    }
+
+    .toggler.round {
+        border-radius: 34px;
+    }
+
+    .toggler.round::before{
+        border-radius: 50%;
+    }
+}
+
 /* ---------------  HomePage Second-Section A Propos ---------------  */
 .second-section {
     margin-top: 80px;
@@ -182,7 +257,6 @@ body {
         font-weight: 300;
     }
 }
-
 
 .heading-4-a-propos {
     margin-top: 150px;
@@ -216,7 +290,6 @@ body {
     object-fit: cover;
     overflow: hidden;
 }
-
 
 .img-boat {
     display: block;
@@ -412,7 +485,7 @@ body {
     font-weight: 500;
 }
 
-.image-container-contact{
+.image-container-contact {
     display: flex;
     width: 260px;   
     margin: auto; 
@@ -582,7 +655,6 @@ body {
  }
 
 /* ---------------  Blog Page ---------------  */
-
 .blog-container {
     width: 100vw;
     height: 100vh;
@@ -725,6 +797,11 @@ a:any-link {
         }
     }
 
+    .toggle-wrapper {
+        top: 24px;
+        left: 55%;
+        z-index: 8;
+    }    
 
     /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .second-section {
@@ -732,7 +809,6 @@ a:any-link {
         margin-bottom: 100px;
     }
     
-
     .info-a-propos {
         display: flex;
         flex-direction: column;
@@ -775,8 +851,8 @@ a:any-link {
     .container-reservation{
         padding-top: 10px;
     }
-    /* ---------------  Blog Page ---------------  */
 
+    /* ---------------  Blog Page ---------------  */
     .blog-container h1 {
         font-size: 38px;
     }
@@ -785,7 +861,6 @@ a:any-link {
         width: 95%;
         margin: auto;
     }
-
 
     /* ---------------  Modals with Teleport in Reservation.vue ---------------  */
     .reservation-modal{ 
@@ -851,6 +926,12 @@ a:any-link {
         }
     }
 
+    .toggle-wrapper {
+        top: 41px;
+        left: 40%;
+        z-index: 8;
+    }   
+
     /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .info-a-propos {
         flex-direction: column;
@@ -899,7 +980,6 @@ a:any-link {
         padding-right: 0;
     }
 
-    
     /* ---------------  HomePage First-Section ---------------  */
     .visuals {
         right: 5%;
@@ -915,6 +995,12 @@ a:any-link {
 
         }
     }
+
+    .toggle-wrapper {
+        top: 50px;
+        left: 32%;
+        z-index: 8;
+    }   
 
     /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .img-boat, .a-propos-visual {
@@ -945,7 +1031,6 @@ a:any-link {
         padding-left: 2.6rem;
     }
 
-
     /* ---------------  HomePage First-Section ---------------  */
     .visuals {
         right: 5%;
@@ -962,6 +1047,10 @@ a:any-link {
         }
     }
 
+    .toggle-wrapper {
+        top: 155px;
+        left: 13%;
+    }   
 
     /* ---------------  HomePage Second-Section A Propos ---------------  */    
     .img-boat, .a-propos-visual {
@@ -1001,9 +1090,13 @@ a:any-link {
         left: 16%;
     }
 
-
     .vos-envies-section {
         min-height: 160vh;
     }
+
+    .toggle-wrapper {
+        top: 155px;
+        left: 18%;
+    }  
 
 }

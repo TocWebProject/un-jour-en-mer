@@ -37,7 +37,6 @@ import { gsap, Expo } from 'gsap'
 
 export default {
   name: 'VosEnvies',
-  props:['mode'],
   methods: {
 
     //TITLE SCROLLTRIGGER
@@ -73,7 +72,6 @@ export default {
         ease: Expo.easeInOut,
         opacity: 0,
       });
-      // projectPreview1.style.width = "0px";
     },
 
     //ANIM SPORT

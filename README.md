@@ -5,8 +5,9 @@
 
 <p>Dernières améliorations V0.1.1 </p>
 <ul>
-    <li>Custom 404 Page</></li>
-    <li>Implémentation d'un slider présentation des voiliers</li>
+    <li>Dark Mode w/local storage & animation</li>     
+    <li>Custom 404 Page w/video</></li>
+    <li>Implémentation d'un slider présentation des voiliers avec Swiper.js</li>
     <li>Effets transitions entre les pages</li> 
 </ul>
 

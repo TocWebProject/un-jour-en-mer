@@ -38,11 +38,6 @@ import { TimelineLite } from 'gsap'
 
 export default {
   name: 'NavBlogAndFaq',
-  data() {
-    return {
-      
-    };
-  },
   methods: {
     menuAnimation(){
       const { liHome, liBlog, liFAQ } = this.$refs

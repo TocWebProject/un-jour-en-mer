@@ -24,6 +24,7 @@ export default {
         TransitionAnimation,
     },
     props:['mode'],
+    emits: ['toggleDark'],
     methods: {
         animImgBlog(){
             const { imgBlog, h1Blog } = this.$refs

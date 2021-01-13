@@ -1,6 +1,6 @@
 <template>
-  <div :class="( mode ==='dark') ? 'dark' : 'light'">
-    <router-view :mode="mode"></router-view>
+  <div :class="mode">
+    <router-view :mode="mode" @toggle-dark="toggleDark"></router-view>
   </div>
 </template>
 
@@ -8,8 +8,28 @@
 export default {
   data() {
     return {
-      mode: 'dark'
+      mode: ''
     }
+  },
+  watch: {
+    mode: function () {
+      localStorage.setItem("mode", JSON.stringify(this.mode));
+    }
+  },
+  created() {
+    this.mode = JSON.parse(localStorage.getItem("mode"))
+    if (this.mode === null) {
+      this.mode = 'light'
+    }
+  },
+  methods: {
+    toggleDark() {
+      if (this.mode === "dark") {
+        this.mode = "light"
+      } else {
+        this.mode = "dark"
+      }  
+    },  
   }
 }
 </script>

@@ -63,6 +63,7 @@ export default {
         TransitionAnimation,
     },
     props:['mode'],
+    emits: ['toggleDark'],
     methods: {
         animFaq(){
             const { containerFaq } = this.$refs
