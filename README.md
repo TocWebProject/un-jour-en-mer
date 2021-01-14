@@ -3,7 +3,7 @@
 <p>Homepage Screenshot</p>
 <img src="src/assets/img/screenshot-landingpage.png" style="width: 50%">
 
-<p>Dernières améliorations V0.1.1 </p>
+<p>Dernières améliorations V0.1.2: </p>
 <ul>
     <li>Dark Mode w/local storage & animation</li>     
     <li>Custom 404 Page w/video</></li>
