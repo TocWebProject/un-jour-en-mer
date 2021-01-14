@@ -3,13 +3,18 @@
 <p>Homepage Screenshot</p>
 <img src="src/assets/img/screenshot-landingpage.png" style="width: 50%">
 
+<p>Dernières améliorations V0.1.1 </p>
+<ul>
+    <li>Dark Mode w/local storage & animation</li>     
+    <li>Custom 404 Page w/video</></li>
+    <li>Implémentation d'un slider présentation des voiliers avec Swiper.js</li>
+    <li>Effets transitions entre les pages</li> 
+</ul>
+
 <p>Perspectives d'amélioration:</p>
 <ul>
-    <li>Custom 404 Page</></li>
-    <li>Implémentation d'un slider présentation des voiliers</li>
     <li>Blog: Création des pages articles / single article</li> 
     <li>Amélioration SEO / Metadonnées</li> 
-    <li>Effets transitions entre les pages</li> 
 </ul>
 
 

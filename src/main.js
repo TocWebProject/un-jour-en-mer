@@ -54,5 +54,10 @@ const router = createRouter({
     scrollBehavior,
   })
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.config.performance = true
+app.mount('#app')
+
+
 
