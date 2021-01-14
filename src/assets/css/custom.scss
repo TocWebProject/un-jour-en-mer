@@ -630,8 +630,10 @@ body {
 /* ---------------  Faq Page ---------------  */
 .faq-section {
     padding-top: 25vh;
+    padding-bottom: 25vh;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
  }
  
  .faq-section .btn-link {
