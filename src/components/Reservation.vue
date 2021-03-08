@@ -262,4 +262,9 @@ export default {
         border: none;
         outline: none;
     }
+
+    /* Disable Firefox red border */
+    input:required {
+         box-shadow: none;
+    }
 </style>
