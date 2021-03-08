@@ -2,7 +2,7 @@
     <div class="reservation">
         <section class="reservation-section pt-1">
             <div class="container container-reservation">
-                <h4 ref="heading4Reservation" class="heading-4-reservation text-center">Réservation</h4>
+                <h4 id="reservation" ref="heading4Reservation" class="heading-4-reservation text-center">Réservation</h4>
                 <h2 ref="heading2Reservation" class="heading-2-reservation text-center">Programmez votre navigation</h2>
                 <div class="row">
                     <div class="col-12 visuals-reservation">

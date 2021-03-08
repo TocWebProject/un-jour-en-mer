@@ -35,9 +35,9 @@
         <span ref="callToScrollText" class="call-to-scroll-text">SCROLL</span>
       </div>
     </section>
-    <section class="second-section pt-1" id="apropos">
+    <section class="second-section pt-1">
       <div class="container mt-5">
-        <h4 ref="heading4aPropos" class="heading-4-a-propos text-center">A Propos</h4>
+        <h4 id="apropos" ref="heading4aPropos" class="heading-4-a-propos text-center">A Propos</h4>
         <h2 ref="heading2aPropos" class="heading-2-a-propos text-center">Prenez le large en toute confiance</h2>
         <div class="container">
           <div class="row info-a-propos">
@@ -69,10 +69,10 @@
     </section>
     <BoatsSwiper></BoatsSwiper>
     <VosEnvies></VosEnvies>
-    <Reservation id="reservation" :mode="mode"></Reservation>
-    <section ref="sectionContactTrigger" class="section-contact pt-1" id="contact">
+    <Reservation :mode="mode"></Reservation>
+    <section ref="sectionContactTrigger" class="section-contact pt-1">
       <div class="container">
-        <h4 ref="heading4reservation" class="heading-4-contact text-center">Contact</h4>
+        <h4 id="contact" ref="heading4reservation" class="heading-4-contact text-center">Contact</h4>
         <h3 ref="heading2reservation" class="heading-3-contact text-center">Un renseignement ?<br>Melen et Victor vous répondent</h3>
         <div class="row mb-4">
           <div class="col-md-12 mt-5 text-center">
