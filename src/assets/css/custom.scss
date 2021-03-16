@@ -299,6 +299,163 @@ body {
     overflow: hidden;
 }
 
+/* ---------------  HomePage SwiperBoat ---------------  */
+.section-boats-swiper {
+    padding-top: 180px;
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 80px;
+}
+
+.heading-4-boats-swiper {
+  margin-top: 100px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #696969;
+  font-size: 15px;
+}
+
+.heading-2-boats-swiper {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: rgba(0, 21, 50, 0.9);
+    font-size: 45px;
+    font-family: 'Playfair Display';
+    font-weight: 500;
+}
+
+.swiper-container {
+    width: 700px;
+    height: 400px;
+    padding-bottom: 120px;
+    order: 1;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    width: 330px;
+    height: 450px;
+
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    object-fit: cover;
+    width: 330px;
+    height: 330px;
+    margin-bottom: 90px;
+    
+}
+
+.swiper-button-prev, .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+    border-radius: 50%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.322);
+    color: rgba(0, 21, 50, 0.9);
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 13px
+}
+
+.text-boat-swiper {
+  width: 380px;
+  order: 2;
+  margin-top: 60px;
+}
+
+.text-boat-swiper p {
+  font-size: 17px;  
+  font-weight: 300;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.text-boat-swiper a {
+  color:rgba(0, 21, 50, 0.9);
+  cursor: pointer;
+}
+
+.text-boat-swiper a:hover {
+  text-decoration: none;
+  color: rgb(133, 184, 255);
+  svg {
+    fill: rgb(133, 184, 255);
+  }
+}
+
+.tontouta-text {
+  margin-bottom: 50px;
+}
+
+.dephemeride-text {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+//MEDIA QUERIES
+
+// Extra small devices (portrait phones, less than 576px)
+@media screen and (min-width: 100px) and (max-width: 576px) { 
+
+  .heading-4-boats-swiper {
+    margin-top: 180px;
+  }
+
+  .section-swiper-boreal {
+    padding-top: 300px;
+    padding-bottom: 40px; 
+  }
+
+}
+
+// Small devices (landscape phones, less than 769px)    
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+}
+
+// Medium devices (tablets, less than 992px)
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  
+}
+
+// Large devices (desktops, less than 1200px)
+@media screen and (min-width: 992px) and (max-width: 1200px) { 
+
+}
+
+// Sumo devices (desktops, less than 1200px)
+@media screen and (min-width: 1200px) and (max-width: 3000px) { 
+  .swiper-container {
+     order: 2;
+  }
+
+  .text-boat-swiper {
+    order: 1;
+    margin-top: 0px;
+  }
+
+}
 /* ---------------  HomePage Vos-Envies-Section (Only Desktop) ---------------  */
 .vos-envies-section {
     padding-bottom: 80px;
