@@ -35,6 +35,7 @@
         <span ref="callToScrollText" class="call-to-scroll-text">SCROLL</span>
       </div>
     </section>
+    <HomeDreamVideo v-if="windowWidth > 1480"></HomeDreamVideo>
     <section class="second-section pt-1">
       <div class="container mt-5">
         <h4 id="apropos" ref="heading4aPropos" class="heading-4-a-propos text-center">A Propos</h4>
@@ -68,7 +69,7 @@
       </div> 
     </section>
     <BoatsSwiper></BoatsSwiper>
-    <VosEnvies v-if="windowWidth > 900"></VosEnvies>
+    <VosEnvies v-if="windowWidth > 1100"></VosEnvies>
     <Reservation :mode="mode"></Reservation>
     <section ref="sectionContactTrigger" class="section-contact pt-1">
       <div class="container">
@@ -134,6 +135,7 @@
 
 <script>
 import NavHome from "./NavHome.vue"
+import HomeDreamVideo from './HomeDreamVideo.vue' 
 import Reservation from './Reservation.vue' 
 import VosEnvies from './VosEnvies.vue'
 import BoatsSwiper from './BoatsSwiper.vue'
@@ -148,6 +150,7 @@ export default {
   name: 'Home',
   components: {
     NavHome,
+    HomeDreamVideo,
     Reservation,
     VosEnvies,
     BoatsSwiper,
@@ -475,6 +478,13 @@ export default {
     }
   },
 
+  computed: {
+    // Access vindowWidth
+    windowWidth() {
+      return this.$store.state.windowWidth;
+    },
+  },
+  
   mounted() {
     // document.onreadystatechange = () => {
         // if (document.readyState == "complete") {   
@@ -484,22 +494,10 @@ export default {
     // }
   },
 
-  computed: {
-    // Access vindowWidth
-    windowWidth() {
-      return this.$store.state.windowWidth;
-    },
-    
-    //Bollean to controle components with v-if. 
-    basedOnWindowWidth() {
-    if (this.windowWidth > 768) {
-        return true;
-      } return false;
-    }
-  },
-
   unmounted (){
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', () => {
+      this.$store.commit('setWindowWidth');
+    }, false)
   }
 };
 </script>

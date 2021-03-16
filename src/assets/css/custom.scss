@@ -299,6 +299,13 @@ body {
     overflow: hidden;
 }
 
+// Media queries to proper margin this section cause the HomeVideoDream.vue is scaling up.
+@media screen and (min-width: 1479px) and (max-width: 3000px) { 
+    .second-section {
+        margin-top: 400px;
+    }
+}
+
 /* ---------------  HomePage SwiperBoat ---------------  */
 .section-boats-swiper {
     padding-top: 180px;
