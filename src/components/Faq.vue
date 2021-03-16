@@ -1,7 +1,7 @@
 <template>
     <TransitionAnimation></TransitionAnimation>
     <NavBlogAndFaq></NavBlogAndFaq>
-    <div ref="containerFaq" class="container-fluid col-8 faq-section">     
+    <div ref="containerFaq" class="container-fluid col-xs-12 col-sm-8 faq-section">     
         <div id="accordion">
             <div class="card">
                 <div class="card-header" id="headingOne">
