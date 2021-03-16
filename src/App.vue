@@ -17,10 +17,16 @@ export default {
     }
   },
   created() {
+    // Color Mode
     this.mode = JSON.parse(localStorage.getItem("mode"))
     if (this.mode === null) {
       this.mode = 'light'
     }
+
+    // Catching Screen Size Vue Store
+    window.addEventListener('resize',() => {
+      this.$store.commit('setWindowWidth');
+    })
   },
   methods: {
     toggleDark() {

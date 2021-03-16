@@ -68,7 +68,7 @@
       </div> 
     </section>
     <BoatsSwiper></BoatsSwiper>
-    <VosEnvies></VosEnvies>
+    <VosEnvies v-if="windowWidth > 900"></VosEnvies>
     <Reservation :mode="mode"></Reservation>
     <section ref="sectionContactTrigger" class="section-contact pt-1">
       <div class="container">
@@ -482,6 +482,24 @@ export default {
         this.initScrollAnimation();     
     //   }
     // }
+  },
+
+  computed: {
+    // Access vindowWidth
+    windowWidth() {
+      return this.$store.state.windowWidth;
+    },
+    
+    //Bollean to controle components with v-if. 
+    basedOnWindowWidth() {
+    if (this.windowWidth > 768) {
+        return true;
+      } return false;
+    }
+  },
+
+  unmounted (){
+    window.removeEventListener('resize')
   }
 };
 </script>

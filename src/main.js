@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import { createStore } from 'vuex'
 
 import App from './App.vue'
 
@@ -64,11 +65,26 @@ const router = createRouter({
             }
           }
     ],
-    scrollBehavior,
-  })
+  scrollBehavior,
+})
+
+// Create a new store instance: windowWidth
+const store = createStore({
+  state () {
+    return {
+      windowWidth: window.innerWidth,
+    }
+  },
+  mutations: {
+    setWindowWidth (state) {
+      state.windowWidth = window.innerWidth;
+    }
+  }
+})
 
 const app = createApp(App)
-app.use(router)
+app.use(router, store)
+app.config.globalProperties.$store=store;
 app.config.performance = true
 app.mount('#app')
 
