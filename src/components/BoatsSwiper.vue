@@ -41,10 +41,6 @@
           @swiper="onSwiper"
           @slideChange="onSlideChange"
           :centeredSlides="true"
-          :autoplay="{
-              delay: 2500,
-              disableOnInteraction: false,
-          }"
           :breakpoints=" {
               100: {
                 slidesPerView: 1,

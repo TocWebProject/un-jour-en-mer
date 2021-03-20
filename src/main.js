@@ -5,12 +5,11 @@ import { createStore } from 'vuex'
 import App from './App.vue'
 
 // import Swiper core and required components
-import SwiperCore, { Navigation, Pagination, Keyboard, A11y } from 'swiper/core';
+import SwiperCore, { Navigation, Pagination, Keyboard, A11y } from 'swiper';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
 import 'swiper/components/effect-fade/effect-fade.scss';
 
 // install Swiper components
