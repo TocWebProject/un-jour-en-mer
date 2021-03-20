@@ -77,6 +77,18 @@
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
+  // import Swiper core and required components
+  import SwiperCore, { Navigation, Pagination, Keyboard, A11y } from 'swiper';
+  // Import Swiper styles
+  import 'swiper/swiper.scss';
+  import 'swiper/components/navigation/navigation.scss';
+  import 'swiper/components/pagination/pagination.scss';
+  import 'swiper/components/effect-fade/effect-fade.scss';
+
+  // install Swiper components
+  SwiperCore.use([Navigation, Pagination, Keyboard, A11y]);
+
+
   import { gsap } from  "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
