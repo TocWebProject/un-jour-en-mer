@@ -30,7 +30,7 @@
         </div>
         <swiper
           :slides-per-view="2"
-          :space-between="80"
+          :space-between="60"
           :loop="true"
           keyboard
           navigation
@@ -59,7 +59,6 @@
           <swiper-slide><img src="../assets/img/geran-de-klerk-unsplash.jpg" alt=""></swiper-slide>
           <swiper-slide><img src="../assets\img\pawel-czerwinski-unsplash-transition.jpg" alt=""></swiper-slide>
           <swiper-slide><img src="../assets\img\artyom-kabajev-Wy2BfDjvJA8-unsplash.jpg" alt=""></swiper-slide>
-          ...
         </swiper>
       </div>
     </div>
