@@ -30,9 +30,10 @@
         </div>
         <swiper
           :slides-per-view="2"
-          :space-between="60"
+          :space-between="80"
           :loop="true"
           keyboard
+          :grabCursor="true"
           :navigation="{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
