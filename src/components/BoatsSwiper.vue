@@ -33,8 +33,12 @@
           :space-between="60"
           :loop="true"
           keyboard
-          navigation
+          :navigation="{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }"
           :pagination="{ 
+            el: '.swiper-pagination',
             clickable: true,
             dynamicBullets: true,
           }"
@@ -59,6 +63,9 @@
           <swiper-slide><img src="../assets/img/geran-de-klerk-unsplash.jpg" alt=""></swiper-slide>
           <swiper-slide><img src="../assets\img\pawel-czerwinski-unsplash-transition.jpg" alt=""></swiper-slide>
           <swiper-slide><img src="../assets\img\artyom-kabajev-Wy2BfDjvJA8-unsplash.jpg" alt=""></swiper-slide>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </swiper>
       </div>
     </div>
