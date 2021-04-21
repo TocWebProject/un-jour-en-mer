@@ -3,7 +3,7 @@
     <section class="navigation">
       <nav id="navbar-un-jour-en-mer" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <div class="navbar-brands">Un Jour en Mer</div>
+          <div class="navbar-brands"><router-link to="/" class="nav-link"> Un Jour en Mer</router-link></div>
           <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarsUJEM" aria-controls="navbarsUJEM" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
